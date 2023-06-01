@@ -26,9 +26,7 @@
 
 ```
 git clone https://github.com/elenashovtyuk/bs4_parser_pep.git
-```
 
-```
 cd bs4_parser_pep
 ```
 
