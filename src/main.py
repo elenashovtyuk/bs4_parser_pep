@@ -111,6 +111,7 @@ def pep(session):
     tbody_tag = find_tag(section_tag, 'tbody')
     tr_tags = tbody_tag.find_all('tr')
 
+    status_sum = defaultdict(int)
     total_peps = 0
     results = [('Статус', 'Количество')]
 
@@ -131,7 +132,6 @@ def pep(session):
             if dt_tag.text == 'Status:':
                 total_peps += 1
                 status = dt_tag.find_next_sibling().string
-                status_sum = defaultdict(int=1)
                 status_sum[status] += 1
                 if status not in EXPECTED_STATUS[preview_status]:
                     error_message = (
